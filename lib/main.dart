@@ -6,7 +6,7 @@ import 'services/sensor_service.dart';
 void main() => runApp(const SensorApp());
 
 class SensorApp extends StatelessWidget {
-  const SensorApp({Key? key}) : super(key: key);
+  const SensorApp({super.key});
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -38,7 +38,8 @@ class SensorApp extends StatelessWidget {
 }
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -167,12 +168,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-        ]),
+        ]),  
       );
 }
 
 class SensorHomePage extends StatefulWidget {
-  const SensorHomePage({Key? key}) : super(key: key);
+  const SensorHomePage({super.key});
+
   @override
   _SensorHomePageState createState() => _SensorHomePageState();
 }
@@ -281,6 +283,8 @@ class _SensorHomePageState extends State<SensorHomePage> {
                           _buildSensorCard('Humedad', '${data.humedad} %', Icons.water_drop, Colors.blueAccent),
                           _buildSensorCard('Humedad Suelo', '${data.humedadSuelo} %', Icons.grass, Colors.greenAccent),
                           _buildSensorCard('Calidad Aire', data.calidadAire, Icons.air, Colors.purpleAccent),
+                          _buildSensorCard('Estado Temperatura', data.estadoTemperatura, Icons.device_thermostat, Colors.redAccent),
+                          _buildSensorCard('Estado Humedad', data.estadoHumedad, Icons.opacity, Colors.cyanAccent),
                         ],
                       ),
                     ),
